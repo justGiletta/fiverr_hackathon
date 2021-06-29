@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Home {% endblock %}
+
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+
+{% block body %}
+    <div class="bg-img">
+        <div class="form_container">
+            {% if error %}
+                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+            <div class="tab-group d-flex justify-content-center">
+                <span class="tab active">
+                    <a class="p-4" href="#signup">Sign Up</a>
+                </span>
+                <span class="tab">
+                    <a class="p-4" href="#login">Log In</a>
+                </span>
+            </div>
+            <div class="tab-content">
+                <div id="signup">
+                {% include 'security/register.html.twig' %}
+                </div>
+                <div id="login">
+                {% include 'security/login.html.twig' %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+<script>
+    $('.tab a').on('click', function(e) {
+
+        e.preventDefault();
+
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+
+        target = $(this).attr('href');
+
+        $('.tab-content > div').not(target).hide();
+
+        $(target).fadeIn(600);
+
+    });
+</script>
+{% endblock %}

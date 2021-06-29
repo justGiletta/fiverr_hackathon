@@ -1,0 +1,130 @@
+{% extends 'base.html.twig' %}
+{% block title %} Account {% endblock %}
+{% block navbar %}{% include '_navbar.html.twig' %}{% endblock %}
+{% block body %}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://images-ext-2.discordapp.net/external/zJah_JXyMAH9whHY_1Zt2BYGozruLxmpG273U4mAGRI/https/zupimages.net/up/21/26/mc9l.png" class="d-block w-100">
+        </div>
+    </div>
+</div>
+
+
+<div class="account">
+    <div class="account_menu" style="border-radius:16px;">
+        <div class="nav">
+        <button class="btn_blue mb-4" type="button">My account</button>
+        <a class="nav-link" href="/user/infos">Informations</a>
+        <a class="nav-link" href="/user/parrains">My sponsors</a>
+        <a class="nav-link mb-4" href="/user/filleuls">My juniors</a>
+        <a href="{{ path('user_senior') }}" class="btn_blue mb-5" type="button" id="all-s">All seniors</a>
+        <a href="{{ path('user_junior') }}" class="btn_blue mb-5" type="button" id="all-j">All juniors</a>
+        <button class="btn_blue deconnexion" type="button">Logout</button>
+        </div>
+
+        <div class="account_info">
+            <div class="infos">My info</div>
+            <p>Username<br>
+            Poil Poil</p>
+            <p>Mail<br>
+            poil.poil@caramail.fr</p>
+            <p>Member since<br>
+            8 September 2020</p>
+        </div>
+        
+        <div class="account_match">
+            <div class="infos">My sponsors</div>
+                <div class="card_match">
+                    <img class="picture" src="https://cdn.pixabay.com/photo/2016/09/24/03/20/man-1690965_960_720.jpg"></img>
+                    <div class="description">
+                    <p style="margin: 3%; color: #E2E2E2;">   Hi. My name is John.</p>
+                    </div>
+                    <div class="match_column">
+                        <div class="contact">
+                            <p style="padding: 4%; color: #E2E2E2;padding-left: 20%;">Contact</p>
+                        </div>
+                        <p>Match since<br>
+                        10 October 2020</p>
+                    </div>
+                </div>
+                <div class="card_match">
+                    <img class="picture" src="https://cdn.pixabay.com/photo/2014/11/09/23/32/boy-524512__340.jpg"></img>
+                    <div class="description">
+                    <p style="margin: 3%; color: #E2E2E2;"> Hello. I'm Loïc, and I'm looking for somes junior.</p>
+                    </div>
+                    <div class="match_column">
+                        <div class="contact">
+                            <p style="padding: 4%; color: #E2E2E2;padding-left: 20%;">Contact</p>
+                        </div>
+                        <p>Match since<br>
+                        05 December 2020</p>
+                    </div>
+                </div>
+                <div class="card_match">
+                    <img class="picture" src="https://cdn.pixabay.com/photo/2016/08/13/23/33/smile-1591798__340.jpg"></img>
+                    <div class="description">
+                    <p style="margin: 3%; color: #E2E2E2;">   Hi. My name is John, and I'm looking for a junior
+                    who want to learn somes languages.</p>
+                    </div>
+                    <div class="match_column">
+                        <div class="contact">
+                            <p style="padding: 4%; color: #E2E2E2;padding-left: 20%;">Contact</p>
+                        </div>
+                        <p>Match since<br>
+                        09 February 2021</p>
+                    </div>
+                </div>
+            <div class="infos">My juniors</div>
+            <div class="card_match">
+                    <img class="picture" src="https://cdn.pixabay.com/photo/2017/02/16/23/10/smile-2072907_960_720.jpg"></img>
+                    <div class="description">
+                    <p style="margin: 3%; color: #E2E2E2;">   Hi. My name is John, and I'm looking for a junior
+                    who want to learn somes languages.</p>
+                    </div>
+                    <div class="match_column">
+                        <div class="contact">
+                            <p style="padding: 4%; color: #E2E2E2;padding-left: 20%;">Contact</p>
+                        </div>
+                        <p>Match since<br>
+                        05 March 2021</p>
+                    </div>
+                </div>
+                <div class="card_match">
+                    <img class="picture" src="https://cdn.pixabay.com/photo/2016/03/23/08/34/woman-1274361_960_720.jpg"></img>
+                    <div class="description">
+                    <p style="margin: 3%; color: #E2E2E2;">   Hi. My name is John, and I'm looking for a junior
+                    who want to learn somes languages.</p>
+                    </div>
+                    <div class="match_column">
+                        <div class="contact">
+                            <p style="padding: 4%; color: #E2E2E2;padding-left: 20%;">Contact</p>
+                        </div>
+                        <p>Match since<br>
+                        16 February 2021</p>
+                    </div>
+                </div>
+                <div class="card_match">
+                    <img class="picture" src="https://cdn.pixabay.com/photo/2018/07/25/08/58/business-3560916_960_720.jpg"></img>
+                    <div class="description">
+                    <p style="margin: 3%; color: #E2E2E2;">   Hi. My name is John, and I'm looking for a junior
+                    who want to learn somes languages.</p>
+                    </div>
+                    <div class="match_column">
+                        <div class="contact">
+                            <p style="padding: 4%; color: #E2E2E2;padding-left: 20%;">Contact</p>
+                        </div>
+                        <p>Match since<br>
+                        22 August 2020</p>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+
+
+
+{% endblock %}
+
+{% block footer %}{% include '_footer.html.twig' %}{% endblock %}

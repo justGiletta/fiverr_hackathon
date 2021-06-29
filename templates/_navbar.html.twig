@@ -1,0 +1,22 @@
+<nav class="p-3 mb-5 navbarfiverr">
+    {% if app.request.requestUri is same as '/' %}
+        <div><a class="homepage_logo" href="/"><img src="https://www.zupimages.net/up/21/26/c6od.png"/></a></div>
+    {% else %}
+        <div><a class="navlogo" href="/"><img src="https://www.zupimages.net/up/21/26/c6od.png"/></a></div>
+    {% endif %}
+    <a class="text-reset" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"><span class="material-icons" style="color: white;">menu</span></a>
+    <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
+        {% if app.user is defined %}
+            <li><a class="dropdown-item text-reset fs-3" href="{{ path('user_account') }}">My account</a></li>
+            {# <li><a class="dropdown-item text-reset" href="#">Informations</a></li>
+            <li><a class="dropdown-item text-reset" href="#">My sponsors</a></li>
+            <li><a class="dropdown-item text-reset" href="#">My juniors</a></li>
+            <li><a class="dropdown-item text-reset" href="#">My messages</a></li> #}
+        {% endif %}
+            <li><a class="dropdown-item text-reset fs-3" href="{{ path('user_senior') }}">All seniors</a></li>
+            <li><a class="dropdown-item text-reset fs-3" href="{{ path('user_junior') }}">All juniors</a></li>
+        {% if app.user is defined %}
+            <li><a class="dropdown-item text-reset fs-3" href="{{ path('app_logout') }}">Logout</a></li>
+        {% endif %}
+    </ul>
+</nav>

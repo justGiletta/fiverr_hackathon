@@ -22,8 +22,8 @@ composer install, composer require webpack-encore-bundle, yarn install, yarn enc
 👤 AnaisBerducat
 
 * Github:
-[PaulineGB](https://github.com/PaulineGB), 
-[justGiletta](https://github.com/justGiletta), 
+[PaulineGB](https://github.com/PaulineGB),
+[justGiletta](https://github.com/justGiletta),
 [clnmlg](https://github.com/clnmlg),
 [Fanny37](https://github.com/Fanny37),
 [AnaisBerducat](https://github.com/AnaisBerducat)

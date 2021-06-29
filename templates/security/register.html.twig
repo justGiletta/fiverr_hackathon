@@ -1,0 +1,49 @@
+<div class="container-fluid" id="login_form">
+    <div class="contact_form row m-3" id="login_frame">
+        <form method="POST">
+            {# {% for flashError in app.flashes('verify_email_error') %}
+                <div class="alert alert-danger" role="alert">{{ flashError }}</div>
+            {% endfor %} #}
+
+            <h1>Register to Fiverr sponsorship</h1>
+            <hr class="hr_register">
+            {{ form_start(registrationForm) }}
+            <div class="col-md my-2">
+                <div class="form-floating">
+                    {{ form_errors(registrationForm.username) }}
+                    {{ form_widget(registrationForm.username, {'attr': {'class': 'form-control', 'id': 'inputs'}}) }}
+                    {{ form_label(registrationForm.username, 'Username') }}
+                </div>
+            </div>
+            <div class="col-md my-2">
+                <div class="form-floating">
+                    {{ form_errors(registrationForm.email) }}
+                    {{ form_widget(registrationForm.email, {'attr': {'class': 'form-control', 'id': 'inputs'}}) }}
+                    {{ form_label(registrationForm.email, 'Email') }}
+                </div>
+            </div>
+            <div class="col-md my-2">
+                <div class="form-floating">
+                    {{ form_errors(registrationForm.plainPassword) }}
+                    {{ form_widget(registrationForm.plainPassword, {'attr': {'class': 'form-control', 'id': 'inputs'}}) }}
+                    {{ form_label(registrationForm.plainPassword, 'Password') }}
+                </div>
+            </div>
+            {# <div class="row">
+                <div class="input-field col s12">
+                    <input id="password-confirm" type="password" class="validate">
+                    <label for="password-confirm">Password Confirmation</label>
+                </div>
+            </div> #}
+            <div class="col-md my-2">
+                <div class="form-floating">
+                    {{ form_row(registrationForm.agreeTerms) }}
+                </div>
+            </div>
+            <div class="col-md my-2 text-center">
+                <button type="submit" class="btn">Register</button>
+            </div>
+            {{ form_end(registrationForm) }}
+        </form>
+    </div>
+</div>
