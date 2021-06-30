@@ -53,6 +53,7 @@ body {
     background-color: #584AFF;
     display: flex;
     justify-content: center;
+    box-shadow: 1px -8px 15px 5px rgba(0,0,0,0.36);
 }
 
 .footer img {
@@ -174,12 +175,11 @@ body {
     padding: 1%;
 }
 
-/*------------------------Junior Page--------------------*/
-/*
-.junior_title {
+/*------------------------Junior Senior Page--------------------*/
+
+.listpage {
     background-color: #584AFF;
-    border-radius: 6px;
-} */
+}
 
 .containercard {
     display: flex;
@@ -192,8 +192,19 @@ body {
     margin-top: 7rem;
 }
 
+@media screen and (min-width: 100px) and (max-width: 768px) {
+    .containercardresp {
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .blocright {
+        margin-top: 3rem;
+    }
+}
+
 .junior_title h1 {
-    color: #584AFF;
+    color: #f9f8ff;
 }
 
 .junior_card_match {
@@ -208,70 +219,65 @@ body {
     border-radius: 50px;
 }
 
-.junior_description {
-    background: #584AFF;
-    height: 80px;
-    width: 350px;
-    border-radius: 16px;
-}
-
-.junior_description p {
-    color: #E2E2E2;;
-}
-
-.junior_button button {
-    background-color: #5804FF;
-}
-
-/*------------------------end junior-page--------------------*/
-
-
-/*------------------------senior Page--------------------*/
-
-.senior_title {
-    background-color: #584AFF;
-    border-radius: 6px;
-}
-
-.senior_title h1 {
-    color: beige;
-}
-
-.senior_card_match {
-    display: flex;
-    margin-bottom: 2%;
-}
-
-.senior_picture1 {
-    background-image: url(https://i.ibb.co/SRVPn2k/fiverr-freelance-11-1200x849.jpg;);
+.junior_picture2 {
+    background-image: url(https://i.ibb.co/gPTGHgD/7j49.jpg);
     background-size: 90px;
     width: 80px;
     height: 80px;
     border-radius: 50px;
-    margin-right: 2%;
 }
 
-.senior_description {
-    background: #584AFF;
+.junior_picture3 {
+    background-image: url(https://i.ibb.co/rb6fz4s/Capture-d-cran-de-2021-06-30-09-54-26.png);
+    background-size: 90px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.junior_picture4 {
+    background-image: url(https://i.ibb.co/ysyQGqZ/Capture-d-cran-de-2021-06-30-09-54-54.png);
+    background-size: 90px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.junior_picture5 {
+    background-image: url(https://i.ibb.co/G953V7w/Capture-d-cran-de-2021-06-30-10-03-10.png);
+    background-size: 90px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.junior_picture6 {
+    background-image: url(https://i.ibb.co/FDKvpz6/Capture-d-cran-de-2021-06-30-10-03-39.png);
+    background-size: 90px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+
+.junior_description {
+    background-color: #ffffff;
     height: 80px;
     width: 350px;
     border-radius: 16px;
-    margin-right: 2%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
-.senior_description p {
-    color: #E2E2E2;;
+.junior_description p {
+    color: #585AFF;
 }
 
-.senior_buttons button {
-    background-color: #584AFF;
-    margin-left: 2rem;
+.junior_buttons button {
+    background-color: #C9C6F8;
+    border-radius: 5px;
+    color: #584AFF;
 }
 
-.senior_buttons {
-    margin-left: 6rem;
-}
-/*------------------------end senior-page--------------------*/
+/*------------------------end junior-page--------------------*/
 
 /*------------------------login form--------------------*/
 
@@ -285,15 +291,18 @@ label.active {
     font-size:14px;
     opacity:0;
 }
+
 .tab-group {
     width: 460px;
     margin: 0 30px;
 }
+
 .tab-group .active a {
     background: #1ab188;
     color: white;
     border-radius: 5px;
 }
+
 .tab-group a {
     background: #5804ff41;
     text-decoration: none;
@@ -302,13 +311,16 @@ label.active {
     width: 50%;
     box-shadow: 10px 5px 5px #5804ff24;
 }
+
 .tab-group a:hover {
     color: white;
     background: #B3ABFF;
 }
+
 .form_container {
     position: relative;
 }
+
 .contact_form {
     border-radius: 10px;
     padding: 30px;
@@ -376,18 +388,24 @@ label.active {
         width: 460px;
         margin: 0 30px;
     }
+    .form_container {
+        margin-top: 250px;
+        margin-left: 50px;
+    }
 }
-@media (min-width: 1024px) {
+
+@media (min-width: 1024px) and (max-width: 1200px) {
     .tab-group {
         width: 380px;
         margin: 0 30px;
     }
     .form_container {
         margin-top: 200px;
-        margin-left: 100px;
+        margin-left: 50px;
     }
 }
-@media (min-width: 768px) {
+
+@media (min-width: 768px) and (max-width: 1024px) {
     .tab-group {
         width: 300px;
         margin: 0 30px;
@@ -397,17 +415,18 @@ label.active {
         margin-left: 50px;
     }
 }
+
 @media (min-width: 240px) and (max-width: 768px) {
     .tab-group {
         width: 350px;
-        margin: 0;
+        margin: auto;
     }
     .tab-content {
         width: 330px;
         margin: auto;
     }
     .form_container {
-        margin-top: 180px;
+        margin-top: 200px;
     }
 }
 

@@ -22,41 +22,24 @@ class DefaultController extends AbstractController
      * @Route("/", name="index", methods={"GET","POST"})
      */
     public function index(
-        UserRepository $userRepository,
         AuthenticationUtils $authenticationUtils,
         Request $request,
         UserPasswordHasherInterface $passwordHasher
-        ): Response
+    ): Response
     {
+
         $error = $authenticationUtils->getLastAuthenticationError();
         $lastUsername = $authenticationUtils->getLastUsername();
 
+
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            // encode the plain password
-            $user->setPassword(
-                $passwordHasher->hashPassword(
-                    $user,
-                    $form->get('plainPassword')->getData()
-                )
-            );
-
-            $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($user);
-            $entityManager->flush();
-            // do anything else you need here, like send an email
-
-            return $this->redirectToRoute('user_account');
-        }
 
         return $this->render('index.html.twig', [
-            'users' => $userRepository->findAll(),
-            'last_username' => $lastUsername,
-            'error' => $error,
             'registrationForm' => $form->createView(),
+            'last_username' => $lastUsername,
+            'error' => $error
         ]);
     }
 

@@ -6,7 +6,7 @@
     {% endif %}
     <a class="text-reset" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown"><span class="material-icons" style="color: white;">menu</span></a>
     <ul class="dropdown-menu text-center" aria-labelledby="dropdownMenuLink">
-        {% if app.user is defined %}
+        {% if app.user is not null %}
             <li><a class="dropdown-item text-reset fs-3" href="{{ path('user_account') }}">My account</a></li>
             {# <li><a class="dropdown-item text-reset" href="#">Informations</a></li>
             <li><a class="dropdown-item text-reset" href="#">My sponsors</a></li>
@@ -15,8 +15,9 @@
         {% endif %}
             <li><a class="dropdown-item text-reset fs-3" href="{{ path('user_senior') }}">All seniors</a></li>
             <li><a class="dropdown-item text-reset fs-3" href="{{ path('user_junior') }}">All juniors</a></li>
-        {% if app.user is defined %}
+        {% if app.user is not null %}
             <li><a class="dropdown-item text-reset fs-3" href="{{ path('app_logout') }}">Logout</a></li>
         {% endif %}
     </ul>
 </nav>
+

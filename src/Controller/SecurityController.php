@@ -14,6 +14,16 @@ use Symfony\Component\Form\FormTypeInterface;
 
 class SecurityController extends AbstractController
 {
+
+    /* private string $last_username;
+
+    private array $error;
+
+    public function __construct(AuthenticationUtils $last_username, AuthenticationUtils $error) {
+        $this->error = $error;
+        $this->last_username = $last_username;
+    } */
+
     /**
      * @Route("/login", name="app_login")
      */
@@ -38,5 +48,41 @@ class SecurityController extends AbstractController
     {
         return $this->redirectToRoute('index');
     }
+
+    /**
+     * @Route("/register", name="app_register", methods={"GET","POST"})
+     */
+    public function register(
+        AuthenticationUtils $authenticationUtils,
+        Request $request,
+        UserPasswordHasherInterface $passwordHasher
+        ): Response
+    {
+        $user = new User();
+        $form = $this->createForm(RegistrationFormType::class, $user);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            // encode the plain password
+            $user->setPassword(
+                $passwordHasher->hashPassword(
+                    $user,
+                    $form->get('plainPassword')->getData()
+                )
+            );
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($user);
+            $entityManager->flush();
+            // do anything else you need here, like send an email
+
+            return $this->redirectToRoute('user_account');
+        }
+
+        return $this->render('security/register.html.twig', [
+            'registrationForm' => $form->createView(),
+        ]);
+    }
+
 
 }
